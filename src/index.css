@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    /*background-image: url("/src/img/univ.jpg");*/
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    /*color: #fff;*/
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(14,14,54,1) 100%);
+}
+
+.card-header {
+    text-align: center;
+}
