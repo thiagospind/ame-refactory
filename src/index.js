@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Planeta from './componentes/Planeta'
+import Planet from './components/Planet'
 
 const elemento = document.getElementById('root')
 ReactDOM.render(
     <div>
-        <Planeta/>
+        <Planet/>
     </div>,
     elemento)

@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('fonts/Roboto-Regular.ttf');
+    font-family: 'ShareTechMono';
+    src: url('fonts/ShareTechMono-Regular.ttf');
 }
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ShareTechMono', monospace;
 }
 
 body{
@@ -15,7 +15,7 @@ body{
     align-items: center;
     text-align: left;
 
-    /*color: #fff;*/
+    color: #ffc107;
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(14,14,54,1) 100%);
 }
 

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Axios from "axios";
-import CardPlaneta from './CardPlaneta'
+import CardPlanet from './CardPlanet'
+import Button from './Button'
 import LoadSpinner from './LoadingSpinner'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/starwars.css'
 import '../index.css'
-import Button from './Button'
 
-export default class Planeta extends Component{
+export default class Planet extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -54,57 +54,15 @@ export default class Planeta extends Component{
 
     next = () => {
         this.setState({selectedIndex: Math.floor(Math.random() * this.state.numPlanets)}, function () {
-            this.cardPlanet();
+            this.cardPlanet()
         })
     }
-
-    previous = () => {
-        if(this.state.selectedIndex === 0)
-            return;
-
-        this.setState(prevState => ({
-            selectedIndex: prevState.selectedIndex - 1
-        }))
-    }
-
-    // iteratePlanet = (operation) => {
-    //     if(operation === 'next') {
-    //         let id = this.state.idPlanet + 1
-    //         if (id > this.state.numPlanets) {
-    //             id = 1
-    //             this.setState({idPlanet: 1}, function () {
-    //                 console.log(this.state.idPlanet)
-    //             })
-    //         } else {
-    //             this.setState(prevState => ({idPlanet: prevState.idPlanet + 1}),function () {
-    //                 console.log(`callback: ${this.state.idPlanet}`)
-    //             })
-    //         }
-    //         this.getPlanet(id)
-    //     } else if (operation === 'previous') {
-    //         let id = this.state.idPlanet - 1
-    //         console.log(`id: ${id}`)
-    //         if (id < 1) {
-    //             id = this.state.numPlanets
-    //             this.setState({idPlanet: id})
-    //         } else {
-    //             this.setState(prevState => ({idPlanet: prevState.idPlanet - 1}), function () {
-    //                 console.log(this.state.idPlanet)
-    //             })
-    //         }
-    //         console.log(`idPlanet: ${this.state.idPlanet}`)
-    //         this.getPlanet(id)
-    //     }
-    //     console.log(`idPlanet: ${this.state.idPlanet}`)
-    // }
 
     cardPlanet = () => {
          var plan = this.state.planets.filter((result, index, arr) => {
              return arr.indexOf(result) === this.state.selectedIndex
          })
         this.setState({planet: plan})
-        console.log(this.state.selectedIndex)
-        console.log(this.state.planet)
     }
 
     checkLoading = () => {
@@ -112,13 +70,11 @@ export default class Planeta extends Component{
         if (this.state.loading === true) {
             return <LoadSpinner/>
         } else {
-            return <div><CardPlaneta planet={planet}/><Button next={this.next}/></div>
+            return <div><CardPlanet planet={planet}/><Button next={this.next}/></div>
         }
     }
 
     render(){
-
-        console.log(this.state.loading)
         return(
             <div>
                 {this.checkLoading()}

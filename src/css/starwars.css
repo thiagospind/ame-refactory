@@ -26,3 +26,8 @@
 .spinner{
     color: white;
 }
+
+.border-warning{
+    background-color: #000000;
+    border-width: 1.5px;
+}
